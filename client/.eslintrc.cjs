@@ -8,6 +8,7 @@ module.exports = {
     "plugin:react/recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:import/recommended",
+    "plugin:tailwindcss/recommended",
     "plugin:prettier/recommended",
   ],
   overrides: [

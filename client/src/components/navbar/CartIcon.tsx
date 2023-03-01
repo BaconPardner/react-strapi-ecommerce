@@ -1,7 +1,7 @@
 const CartIcon = () => {
   return (
     <div className="relative">
-      <div className="absolute top-0 right-0 translate-x-1/2 -translate-y-1/2 bg-blue-500 rounded-full px-1.5 text-sm text-white">
+      <div className="absolute top-0 right-0 translate-x-1/2 -translate-y-1/2 rounded-full bg-blue-500 px-1.5 text-sm text-white">
         1
       </div>
       <svg
