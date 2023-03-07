@@ -30,8 +30,11 @@ module.exports = {
     react: {
       version: "detect",
     },
+    tailwindcss: {
+      config: "client/tailwind.config.cjs",
+    },
   },
-  plugins: ["react", "@typescript-eslint", "import", "prettier"],
+  plugins: ["react", "@typescript-eslint", "import", "tailwindcss", "prettier"],
   rules: {
     "react/react-in-jsx-scope": 0,
     "import/no-unresolved": 0,

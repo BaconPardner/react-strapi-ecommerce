@@ -1,37 +1,41 @@
-import Home from "./components/home";
-import Navbar from "./components/navbar";
+import {
+  createBrowserRouter,
+  createRoutesFromElements,
+  Outlet,
+  Route,
+  RouterProvider,
+} from "react-router-dom";
 
-const categories = [
-  "CPU",
-  "Memory",
-  "Motherboards",
-  "GPU",
-  "Computer Case",
-  "Power Supplies",
-  "Fans & Cooling",
-  "Miscellaneous",
-];
+import Navbar from "./layout/navbar";
+import Sidebar from "./layout/Sidebar";
+import Home from "./pages/home";
+import Product from "./pages/product";
 
-function App() {
+const Root = () => {
   return (
-    <div className="min-h-screen">
-      <Navbar />
-      <div className="container mx-auto flex py-8 px-2">
-        <ul className="space-y-2 pr-10 text-sm">
-          {categories.map((item, idx) => (
-            <li
-              key={idx}
-              className="group w-48 cursor-pointer rounded-3xl py-2 px-4 hover:bg-zinc-100"
-            >
-              <span className="mr-2 rounded-3xl bg-zinc-100 px-1 transition-all duration-200 group-hover:bg-blue-500 group-hover:py-1 group-hover:text-blue-500" />
-              {item}
-            </li>
-          ))}
-        </ul>
-        <Home />
+    <>
+      <div className="min-h-screen">
+        <Navbar />
+        <div className="container mx-auto flex py-8 px-2">
+          <Sidebar />
+          <Outlet />
+        </div>
       </div>
-    </div>
+    </>
   );
-}
+};
+
+const App = () => {
+  const router = createBrowserRouter(
+    createRoutesFromElements(
+      <Route path="/" element={<Root />}>
+        <Route index path="/" element={<Home />} />
+        <Route path="product" element={<Product />} />
+      </Route>
+    )
+  );
+
+  return <RouterProvider router={router} />;
+};
 
 export default App;
