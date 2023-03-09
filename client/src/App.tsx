@@ -1,10 +1,4 @@
-import {
-  createBrowserRouter,
-  createRoutesFromElements,
-  Outlet,
-  Route,
-  RouterProvider,
-} from "react-router-dom";
+import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 
 import Navbar from "./layout/navbar";
 import Sidebar from "./layout/Sidebar";
@@ -26,14 +20,27 @@ const Root = () => {
 };
 
 const App = () => {
-  const router = createBrowserRouter(
-    createRoutesFromElements(
-      <Route path="/" element={<Root />}>
-        <Route index path="/" element={<Home />} />
-        <Route path="product" element={<Product />} />
-      </Route>
-    )
-  );
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <Root />,
+      children: [
+        {
+          index: true,
+          element: <Home />,
+        },
+      ],
+    },
+    {
+      path: "/product",
+      children: [
+        {
+          path: ":id",
+          element: <Product />,
+        },
+      ],
+    },
+  ]);
 
   return <RouterProvider router={router} />;
 };
