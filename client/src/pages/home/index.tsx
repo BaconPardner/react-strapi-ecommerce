@@ -1,4 +1,13 @@
-import { Link } from "react-router-dom";
+import Card from "./Card";
+
+const products = [
+  { title: "AMD Ryzen 9 5950X", price: 499 },
+  { title: "Intel Core i9 13900K", price: 579 },
+  { title: "AMD Radeon RX 7900 XT", price: 799 },
+  { title: "NVIDIA RTX 4090 Ti", price: 1699 },
+  { title: "NVIDIA RTX 4080", price: 1299 },
+  { title: "NVIDIA RTX 4080", price: 1299 },
+];
 
 const index = () => {
   return (
@@ -7,22 +16,10 @@ const index = () => {
         Build PC
       </header>
       <h1 className="flex py-5 text-2xl font-bold">Most Popular Products</h1>
-      <section className="flex">
-        <Link to={"product/1"}>
-          <article className="w-64">
-            <header className="bg-zinc-200 py-20"></header>
-            <main className="p-2">
-              <p className="max-h-10 overflow-hidden text-ellipsis text-sm font-semibold line-clamp-2">
-                AMD Ryzen 7 5700X - Ryzen 7 5000 Series 8-Core 3.4 GHz Socket
-                AM4 65W None Integrated Graphics Desktop Processor -
-                100-100000926WOF
-              </p>
-              <p className="text-2xl">
-                $<strong>200</strong>
-              </p>
-            </main>
-          </article>
-        </Link>
+      <section className="flex flex-wrap justify-between gap-y-5">
+        {products.map((item, idx) => (
+          <Card key={idx} {...item} />
+        ))}
       </section>
     </div>
   );
