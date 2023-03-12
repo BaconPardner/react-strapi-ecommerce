@@ -1,5 +1,5 @@
 const index = () => {
-  return <div>Category</div>;
+  return <div>{window.location.pathname}</div>;
 };
 
 export default index;

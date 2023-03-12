@@ -1,12 +1,12 @@
 import Card from "./Card";
 
 const products = [
-  { title: "AMD Ryzen 9 5950X", price: 499 },
-  { title: "Intel Core i9 13900K", price: 579 },
-  { title: "AMD Radeon RX 7900 XT", price: 799 },
-  { title: "NVIDIA RTX 4090 Ti", price: 1699 },
-  { title: "NVIDIA RTX 4080", price: 1299 },
-  { title: "NVIDIA RTX 4080", price: 1299 },
+  { brand: "AMD", title: "AMD Ryzen 9 5950X", price: 499 },
+  { brand: "Intel", title: "Intel Core i9 13900K", price: 579 },
+  { brand: "AMD", title: "AMD Radeon RX 7900 XT", price: 799 },
+  { brand: "Nvidia", title: "NVIDIA RTX 4090 Ti", price: 1699 },
+  { brand: "Nvidia", title: "NVIDIA RTX 4080", price: 1299 },
+  { brand: "Nvidia", title: "NVIDIA RTX 4080", price: 1299 },
 ];
 
 const index = () => {
