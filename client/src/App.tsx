@@ -28,7 +28,6 @@ const App = () => {
         },
         {
           path: "/product",
-          element: <Layout />,
           children: [
             {
               path: ":id",
